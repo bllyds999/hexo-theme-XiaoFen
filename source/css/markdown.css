@@ -161,10 +161,30 @@
 .post-md code
 {
     border-radius: 4px;
-    background: #2b2b2b;
+    background: var(--fg);
     padding: 2px 4px;
-    color: #f8f8f2;
+    color: var(--bg);
     font-size: 1rem;
+}
+
+.post-md pre
+{
+    background: var(--fg) !important;
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.post-md pre code
+{
+    background: transparent;
+    padding: 0;
+}
+
+.post-md .hljs
+{
+    background: var(--bg) !important;
+    color: var(--fg) !important;
 }
 
 .post-md .hljs-ln-numbers

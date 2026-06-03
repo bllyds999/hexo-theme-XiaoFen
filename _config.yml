@@ -1,5 +1,6 @@
 menu:
-  Home: /
-  About: /about
-  Archives: /archives
+  Home: / || fas fa-house
+  About: /about/ || fas fa-circle-info
+  Archives: /archives/ || fas fa-box-archive
+  Friends: /friends/ || fa-solid fa-user-group
   
