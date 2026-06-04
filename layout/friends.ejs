@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <%- partial('_partial/head') %>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                <%- partial('_partial/header') %>
+                <% if (theme.friends && theme.friends !== false) { %>
+                <div class="friends-page">
+                    <% for (var name in theme.friends) { %>
+                        <% var val = theme.friends[name]; %>
+                        <% if (typeof val === 'string') { %>
+                            <% var parts = val.split(' || '); %>
+                            <% var url = parts[0].trim(); %>
+                            <% var desc = parts[1] ? parts[1].trim() : ''; %>
+                    <div class="friend-item">
+                        <h2><%= name %></h2>
+                        <% if (desc) { %><p><%= desc %></p><% } %>
+                        <a href="<%- url %>" target="_blank" rel="noopener">Go</a>
+                    </div>
+                        <% } %>
+                    <% } %>
+                </div>
+                <% } %>
+                <%- partial('_partial/footer') %>
+            </div>
+        </div>
+    </body>
+</html>

@@ -17,6 +17,24 @@
                     <h2>About Site</h2>
                     <p><%= config.description %></p>
                 </div>
+                <% } else if (page.type === 'friends') { %>
+                <div class="friends-page">
+                    <% if (theme.friends && theme.friends !== false) { %>
+                        <% for (var name in theme.friends) { %>
+                            <% var val = theme.friends[name]; %>
+                            <% if (typeof val === 'string') { %>
+                                <% var parts = val.split(' || '); %>
+                                <% var url = parts[0].trim(); %>
+                                <% var desc = parts[1] ? parts[1].trim() : ''; %>
+                    <div class="friend-item">
+                        <h2><%= name %></h2>
+                        <% if (desc) { %><p><%= desc %></p><% } %>
+                        <a href="<%- url %>" target="_blank" rel="noopener">Go</a>
+                    </div>
+                            <% } %>
+                        <% } %>
+                    <% } %>
+                </div>
                 <% } else { %>
                 <%- body %>
                 <% } %>
