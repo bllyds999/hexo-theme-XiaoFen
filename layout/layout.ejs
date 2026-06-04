@@ -9,7 +9,23 @@
                 <% } else { %>
                     <%- partial('_partial/header') %>
                 <% } %>
+                <% if (page.type === 'about') { %>
+                <div class="about-page">
+                    <p>Hello, welcome to <%= config.title %>.</p>
+                    <h2>About Me</h2>
+                    <p>I'am <%= config.author %>.</p>
+                    <h2>About Site</h2>
+                    <p><%= config.description %></p>
+                </div>
+                <% } else { %>
                 <%- body %>
+                <% } %>
+                <% if ((is_post() || is_page()) && theme.comments && theme.comments !== false) { %>
+                <div class="comments">
+                    <h2>Comments</h2>
+                    <%- theme.comments %>
+                </div>
+                <% } %>
                 <%- partial('_partial/footer') %>
             </div>
         </div>

@@ -128,7 +128,9 @@ a:hover
 
 .post-header
 {
+    padding-bottom: 48px;
     margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -178,7 +180,7 @@ a:hover
     width: 100%;
     padding-bottom: 48px;
     margin-bottom: 48px;
-    border-bottom: 1px dashed var(--line);
+    
 }
 .post-title
 {
@@ -211,10 +213,23 @@ a:hover
     opacity: .7;
     transition: opacity ease-in-out .5s;
 }
+.post-cover {
+    padding-top: 24px;
+    margin-bottom: 12px;
+}
+.post-cover img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
 .post-except
 {
     word-break: break-all;
     margin-bottom: 6px;
+    padding-top: 24px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -222,8 +237,9 @@ a:hover
 }
 .read-more
 {
-    display: inline-block;
-    padding: 0;
+    display: block;
+    text-align: right;
+    padding: 24px 0 0;
     margin-bottom: 12px;
     color: var(--fg);
 }
@@ -246,6 +262,12 @@ a:hover
     transform: translateX(-4px);
     transition: transform ease-in-out .25s;
 }
+.comments h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
 .read-more:hover:after
 {
     transform: translateX(4px);
@@ -413,6 +435,20 @@ a:hover
 
 
 
+
+/* About 页面 */
+.about-page {
+    padding: 24px 0;
+}
+.about-page p {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+.about-page h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 24px 0 12px;
+}
 
 /* 文章分类 */
 .tags {

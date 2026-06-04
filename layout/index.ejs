@@ -11,13 +11,6 @@
     <% posts.forEach(function (post) { %>
     <div class="post">
         <a class="post-title" href="<%- url_for(post.path) %>"><% if (post.sort != null) { %><span class="sort-badge"><%= post.sort %></span><% } %><%= post.title %></a>
-        <% 
-          var rawText = strip_html(post.content).replace(/\s+/g, ' ').trim();
-          var excerpt = post.description ? post.description : rawText.substr(0, 500);
-          var showMore = rawText.length > 180 || post.description;
-        %>
-        <div class="post-except"><%- excerpt %></div>
-        <% if (showMore) { %><a class="read-more" href="<%- url_for(post.path) %>">Read More</a><% } %>
         <div class="post-info">
             <span class="post-info-item"><i class="fas fa-calendar"></i> <%- date(post.date, "YYYY.MM.DD") %></span>
             <% if (post.categories && post.categories.length > 0) { %>
@@ -27,6 +20,14 @@
             <span class="post-info-item"><i class="fas fa-tags"></i> <% post.tags.forEach(function(tag, i) { if (i > 0) { %>, <% } %><a href="<%- url_for(tag.path) %>"><%= tag.name %></a><% }) %></span>
             <% } %>
         </div>
+        <% if (post.cover) { %><div class="post-cover"><img src="<%- post.cover %>" alt="<%= post.title %>"></div><% } %>
+        <% 
+          var rawText = strip_html(post.content).replace(/\s+/g, ' ').trim();
+          var excerpt = post.description ? post.description : rawText.substr(0, 500);
+          var showMore = rawText.length > 180 || post.description;
+        %>
+        <div class="post-except"><%- excerpt %></div>
+        <% if (showMore) { %><a class="read-more" href="<%- url_for(post.path) %>">Read more</a><% } %>
     </div>
     <% }) %>
 </div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <%- partial('_partial/head') %>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                <%- partial('_partial/header') %>
+                <div class="about-page">
+                    <p>Hello, welcome to <%= config.title %>.</p>
+                    <h2>About Me</h2>
+                    <p>I'am <%= config.author %>.</p>
+                    <h2>About Site</h2>
+                    <p><%= config.description %></p>
+                </div>
+                <%- partial('_partial/footer') %>
+            </div>
+        </div>
+    </body>
+</html>

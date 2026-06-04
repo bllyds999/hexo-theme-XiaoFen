@@ -3,4 +3,5 @@ menu:
   About: /about/ || fas fa-circle-info
   Archives: /archives/ || fas fa-box-archive
   Friends: /friends/ || fa-solid fa-user-group
-  
+
+comments: false
